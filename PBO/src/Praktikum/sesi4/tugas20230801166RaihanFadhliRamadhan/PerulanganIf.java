@@ -1,0 +1,50 @@
+package Praktikum.sesi4.tugas20230801166RaihanFadhliRamadhan;
+import java.util.Scanner;
+public class PerulanganIf {
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int pilihan;
+        double totalHarga = 0;
+
+        System.out.println("=== Menu Jual Nasi ===");
+        
+        while (true) {
+            System.out.println("1. Nasi Goreng - Rp 15.000");
+            System.out.println("2. Nasi Campur - Rp 20.000");
+            System.out.println("3. Nasi Putih - Rp 10.000");
+            System.out.println("4. Keluar");
+            System.out.print("Pilih menu (1-4): ");
+            pilihan = scanner.nextInt();
+
+            if (pilihan == 4) {
+                break; // Keluar dari loop jika memilih opsi 4
+            } 
+
+            if (pilihan >= 1 && pilihan <= 3) {
+                System.out.print("Jumlah porsi: ");
+                int jumlah = scanner.nextInt();
+                double harga = 0;
+
+                if (pilihan == 1) {
+                    harga = 15000;
+                    System.out.println("Anda memilih Nasi Goreng.");
+                } else if (pilihan == 2) {
+                    harga = 20000;
+                    System.out.println("Anda memilih Nasi Campur.");
+                } else if (pilihan == 3) {
+                    harga = 10000;
+                    System.out.println("Anda memilih Nasi Putih.");
+                }
+
+                totalHarga += harga * jumlah;
+                System.out.println("Total harga untuk " + jumlah + " porsi: Rp " + (harga * jumlah));
+            } else {
+                System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        }
+
+        System.out.println("Total harga keseluruhan: Rp " + totalHarga);
+        System.out.println("Terima kasih telah berbelanja!");
+        scanner.close();
+    }
+}
